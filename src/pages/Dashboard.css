@@ -1,65 +1,99 @@
+/* === CONTENEDOR GENERAL === */
 .dashboard-container {
-    padding: 20px;
+    padding: 30px;
+    color: #e8f6ff;
+    animation: fadeIn 0.4s ease;
 }
 
 .dashboard-title {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #00e5ff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
 }
 
 .dashboard-subtitle {
-    color: #ffffff;
+    color: #8bdfff;
     margin-bottom: 30px;
 }
 
-/* GRID DE ESTADÍSTICAS */
+/* === ESTADÍSTICAS (TRON CARDS) === */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .stat-card {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(62, 111, 255, 0.597);
+    background: rgba(0, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    padding: 30px;
+    border-radius: 14px;
     text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.25s;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: #00eaff;
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.35);
 }
 
 .stat-card h2 {
-    font-size: 40px;
+    font-size: 44px;
     margin: 0;
-    color: #333;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
 .stat-card p {
-    color: #4f4949;
+    color: #bdefff;
     margin-top: 8px;
+    font-size: 15px;
 }
 
-/* ACTIVIDAD */
+/* === ACTIVIDAD === */
 .activity-section {
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .activity-section h2 {
     margin-bottom: 15px;
+    color: #00eaff;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.6);
 }
 
+/* === LISTA SIN BORDE DE CAJA, SOLO ÍTEMS === */
 .activity-list {
-    background: white;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .activity-list li {
-    color: #000000;
-    padding: 8px 0;
-    border-bottom: 1px solid #000000;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+    color: #c3f5ff;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.activity-list li:hover {
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+    border-bottom-color: rgba(0, 255, 255, 0.35);
 }
 
 .activity-list li:last-child {
     border-bottom: none;
+}
+
+/* === Animación suave === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

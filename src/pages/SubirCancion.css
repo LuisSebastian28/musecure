@@ -1,106 +1,152 @@
+/* === CONTENEDOR GENERAL === */
 .upload-container {
-    padding: 20px;
+    padding: 30px;
+    color: #e8f6ff;
+    animation: fadeIn 0.4s ease;
 }
 
 .upload-title {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    margin-bottom: 5px;
 }
 
 .upload-subtitle {
-    color: #ffffff;
+    color: #8bdfff;
     margin-bottom: 30px;
 }
 
+/* === FORMULARIO === */
 .upload-form {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     max-width: 600px;
 }
 
-.input-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
+/* === INPUT GROUP === */
 .input-group label {
-    margin-bottom: 5px;
-    color: black;
-    font-weight: bold;
+    color: #8bdfff;
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: block;
 }
 
-.input-group input[type="text"],
-.input-group input[type="email"],
-.input-group input[type="password"] {
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 6px;
-}
-
-.dropzone {
-    border: 2px dashed #000000;
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
     border-radius: 10px;
-    padding: 30px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #e8f6ff;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #00eaff;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+/* === DROPZONE === */
+.dropzone {
+    border: 2px dashed rgba(0, 255, 255, 0.35);
+    padding: 35px;
     text-align: center;
-    margin-bottom: 20px;
+    border-radius: 14px;
+    background: rgba(0, 255, 255, 0.04);
+    transition: 0.25s ease;
     cursor: pointer;
-    position: relative;
-    color: #666;
+}
+
+.dropzone:hover {
+    border-color: #00eaff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+}
+
+.dropzone p {
+    margin-bottom: 10px;
+    color: #8bdfff;
 }
 
 .dropzone input {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
+    margin-top: 15px;
     cursor: pointer;
+    color: #e8f6ff;
 }
 
+/* === BOTÓN DE SUBIR === */
 .upload-btn {
-    background: #2d7dff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
+    padding: 14px;
     font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    background: rgba(0, 229, 255, 0.15);
+    border: 1px solid rgba(0, 229, 255, 0.45);
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .upload-btn:hover {
-    background: #1c63d6;
+    background: rgba(0, 229, 255, 0.27);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+    transform: translateY(-3px);
 }
 
-/* MODAL */
+/* === MODAL OVERLAY === */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.3s ease;
 }
 
+/* === CAJA MODAL === */
 .modal-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
+    background: rgba(0, 255, 255, 0.06);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 25px;
     width: 350px;
     text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box h2 {
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #bdefff;
+    margin-bottom: 20px;
 }
 
 .close-btn {
-    margin-top: 15px;
     padding: 10px 20px;
-    background: #2d7dff;
-    color: white;
-    border: none;
-    border-radius: 6px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    background: rgba(0, 255, 255, 0.15);
+    color: #00eaff;
     cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .close-btn:hover {
-    background: #1c63d6;
+    background: rgba(0, 229, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

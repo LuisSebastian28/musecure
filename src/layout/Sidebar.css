@@ -1,116 +1,110 @@
-/* --- LAYOUT GENERAL --- */
+/* === CONTENEDOR GENERAL === */
 .layout-container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-    background: #0d0f10;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    background: #0a0f18;
+    color: #e8f6ff;
 }
 
-/* --- SIDEBAR WEB3 --- */
+/* === SIDEBAR === */
 .sidebar {
+    background: rgba(0, 255, 255, 0.04);
+    border-right: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
-    width: 150px;
-    background: #111317;
-    color: #e5e7eb;
-    padding: 25px 20px;
-    border-right: 1px solid #1f2125;
+    gap: 30px;
+    box-shadow: 4px 0 25px rgba(0, 255, 255, 0.08);
 }
 
-/* --- PERFIL --- */
+/* === PERFIL === */
 .profile-box {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 25px;
-    padding: 10px;
+    gap: 15px;
+    padding: 12px;
     border-radius: 12px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.25s ease;
 }
 
 .profile-box:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .profile-img {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 2px solid #4f80ff;
-    box-shadow: 0 0 10px #4f80ff88;
+    border: 2px solid rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
 }
 
 .profile-info h3 {
     margin: 0;
-    font-size: 17px;
-    font-weight: 600;
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+    font-size: 18px;
 }
 
 .profile-info span {
-    font-size: 13px;
-    opacity: 0.7;
+    color: #8bdfff;
+    font-size: 14px;
 }
 
-/* --- TITULO --- */
+/* === TÍTULO === */
 .sidebar-title {
-    margin-top: 10px;
-    margin-bottom: 25px;
-    font-size: 25px;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #ffffff;
+    font-size: 22px;
+    text-align: left;
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-/* --- NAV LINKS --- */
+/* === NAVEGACIÓN === */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 14px;
 }
 
 .sidebar-nav a {
-    color: #d0d3d8;
     text-decoration: none;
+    color: #bdefff;
     padding: 10px 14px;
     border-radius: 10px;
+    transition: 0.25s ease;
     font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.25s;
 }
 
 .sidebar-nav a:hover {
-    background: #314e75;
+    background: rgba(0, 255, 255, 0.08);
+    color: #00eaff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
     transform: translateX(4px);
 }
 
-/* --- CONTENIDO --- */
-.content {
-    flex: 1;
-    padding: 25px 35px;
-    overflow-y: auto;
-    height: 100vh;
-    color: #e5e7eb;
+.sidebar-nav a.active {
+    background: rgba(0, 229, 255, 0.18);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
 }
 
-/* --- LOGOUT --- */
+/* === BOTÓN DE SALIR === */
 .logout-btn {
     margin-top: auto;
-    padding: 12px;
-    background: #b93636;
-    border: none;
+    padding: 10px 14px;
+    background: rgba(255, 70, 70, 0.1);
+    border: 1px solid rgba(255, 70, 70, 0.35);
+    color: #ff6a6a;
     border-radius: 10px;
-    color: white;
     cursor: pointer;
-    font-size: 15px;
-    transition: 0.25s;
-}
-
-.logout-btn:hover {
-    background: #a02f2f;
-    transform: scale(1.03);
+    transition: 0.25s ease;
+    text-align: left;
 }

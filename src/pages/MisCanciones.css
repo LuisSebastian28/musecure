@@ -1,60 +1,86 @@
+/* === CONTENEDOR GENERAL === */
 .my-songs-container {
-  padding: 20px;
+    padding: 30px;
+    color: #e8f6ff;
+    animation: fadeIn 0.4s ease;
 }
 
 .page-title {
-  font-size: 28px;
-  margin-bottom: 10px;
+    font-size: 32px;
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    margin-bottom: 5px;
 }
 
 .page-subtitle {
-  color: #ffffff;
-  margin-bottom: 30px;
+    color: #8bdfff;
+    margin-bottom: 30px;
 }
 
-/* GRID DE TARJETAS */
+/* === GRID DE TARJETAS === */
 .songs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
 }
 
-/* TARJETA */
+/* === TARJETA TRON === */
 .song-card {
-  background: white;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    background: rgba(0, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 14px;
+    padding: 22px;
+    backdrop-filter: blur(8px);
+    transition: 0.25s ease;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
 }
 
+.song-card:hover {
+    transform: translateY(-4px);
+    border-color: #00eaff;
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.35);
+}
+
+/* === CONTENIDO === */
 .song-title {
-  font-size: 20px;
-  color: #000;
-  margin: 0;
+    font-size: 20px;
+    color: #00eaff;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
+    margin: 0 0 5px;
 }
 
 .song-artist {
-  color: #777;
-  font-size: 15px;
+    color: #bdefff;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 
-/* ESTADOS */
+/* === ESTADO (CHIP NEON) === */
 .estado {
-  padding: 8px 12px;
-  border-radius: 6px;
-  color: white;
-  width: fit-content;
-  font-size: 14px;
-  margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .verificada {
-  background: #2da34b;
+    background: rgba(0, 255, 140, 0.15);
+    color: #00ff9d;
+    border: 1px solid rgba(0, 255, 140, 0.4);
+    text-shadow: 0 0 6px rgba(0, 255, 140, 0.5);
 }
 
 .pendiente {
-  background: #d68b1c;
+    background: rgba(255, 196, 0, 0.12);
+    color: #ffcc33;
+    border: 1px solid rgba(255, 196, 0, 0.4);
+    text-shadow: 0 0 6px rgba(255, 196, 0, 0.5);
+}
+
+/* === Animación === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

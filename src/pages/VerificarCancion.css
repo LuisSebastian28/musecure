@@ -1,121 +1,189 @@
+/* === CONTENEDOR GENERAL === */
 .verify-container {
-  padding: 20px;
+    padding: 30px;
+    color: #e8f6ff;
+    animation: fadeIn 0.4s ease;
 }
 
 .verify-title {
-  font-size: 28px;
-  margin-bottom: 10px;
+    font-size: 32px;
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    margin-bottom: 5px;
 }
 
 .verify-subtitle {
-  color: #ffffff;
-  margin-bottom: 30px;
+    color: #8bdfff;
+    margin-bottom: 30px;
 }
 
-/* GRID DE LISTAS */
+/* === GRID DE LISTAS === */
 .lists-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
+/* === CAJAS DE LISTA === */
 .list-box {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(0, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 14px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    transition: 0.25s ease;
+}
+
+.list-box:hover {
+    transform: translateY(-4px);
+    border-color: #00eaff;
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.35);
 }
 
 .list-title {
-  margin-bottom: 10px;
-  font-size: 18px;
+    margin-bottom: 12px;
+    font-size: 18px;
 }
 
 .list-title.success {
-  color: #2da34b;
+    color: #00ff9d;
+    text-shadow: 0 0 6px rgba(0, 255, 140, 0.5);
 }
+
 .list-title.error {
-  color: #d68b1c;
+    color: #ffcc33;
+    text-shadow: 0 0 6px rgba(255, 196, 0, 0.5);
 }
 
 .list-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .list-box li {
-  color: #333;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+    color: #bdefff;
+    font-size: 15px;
 }
 
-.list-box li:last-child {
-  border-bottom: none;
-}
-
-/* INPUT ABAJO */
+/* === FORMULARIO === */
 .verify-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
 }
 
+/* === DROPZONE === */
 .dropzone {
-  padding: 25px;
-  border: 2px dashed #888;
-  border-radius: 10px;
-  text-align: center;
-  background: #fafafa;
+    border: 2px dashed rgba(0, 255, 255, 0.35);
+    padding: 35px;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(0, 255, 255, 0.04);
+    transition: 0.25s ease;
+    cursor: pointer;
 }
 
+.dropzone:hover {
+    border-color: #00eaff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+}
+
+.dropzone p {
+    margin-bottom: 10px;
+    color: #8bdfff;
+}
+
+.dropzone input {
+    margin-top: 15px;
+    cursor: pointer;
+    color: #e8f6ff;
+}
+
+/* === BOTÓN DE VERIFICAR === */
 .verify-btn {
-  padding: 12px;
-  background: #3b6af0;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    background: rgba(0, 229, 255, 0.15);
+    border: 1px solid rgba(0, 229, 255, 0.45);
+    color: #00eaff;
+    cursor: pointer;
+    transition: 0.25s ease;
+    text-shadow: 0 0 6px rgba(0, 229, 255, 0.5);
 }
 
 .verify-btn:hover {
-  background: #315bd6;
+    background: rgba(0, 229, 255, 0.27);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+    transform: translateY(-3px);
 }
 
-/* MODAL */
+/* === MODAL OVERLAY === */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
 }
 
+/* === CAJA MODAL === */
 .modal-box {
-  background: white;
-  padding: 25px;
-  width: 350px;
-  border-radius: 12px;
-  text-align: center;
+    background: rgba(0, 255, 255, 0.06);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 25px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+    animation: fadeIn 0.3s ease;
 }
 
+/* === TITULOS DEL MODAL === */
 .success-title {
-  color: #2da34b;
+    color: #00ff9d;
+    text-shadow: 0 0 6px rgba(0, 255, 140, 0.5);
+    margin-bottom: 10px;
 }
 
 .error-title {
-  color: #d68b1c;
+    color: #ffcc33;
+    text-shadow: 0 0 6px rgba(255, 196, 0, 0.5);
+    margin-bottom: 10px;
 }
 
+.modal-message {
+    color: #bdefff;
+    margin-bottom: 20px;
+}
+
+/* === BOTÓN DE CERRAR === */
 .close-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  background: #333;
-  color: white;
-  border-radius: 6px;   
-  cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    background: rgba(0, 255, 255, 0.15);
+    color: #00eaff;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.close-btn:hover {
+    background: rgba(0, 229, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+/* === ANIMACIÓN === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
