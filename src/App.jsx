@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import SubirCancion from "./pages/SubirCancion";
-import "./App.css";
 import MisCanciones from "./pages/MisCanciones";
 import Verificar from "./pages/VerificarCancion";
+import "./App.css";
 import SidebarLayout from "./layout/SidebarLayout";
 
 export default function App() {
