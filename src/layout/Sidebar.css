@@ -1,0 +1,71 @@
+.layout-container {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;   /* Necesario para empujar el botón */
+    width: 220px;
+    background: #2d2f33;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar-title {
+    margin-bottom: 20px;
+    margin-left: 5px;
+    font-size: 22px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.sidebar-nav a {
+    color: #dcdcdc;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.sidebar-nav a:hover {
+    background: #3d3f44;
+}
+
+.sidebar-content {
+    flex: 1;             /* ← Esto hace espacio flexible */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.logout-btn {
+    margin-top: auto;    
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    background: #b93636;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logout-btn:hover {
+    background: #a02f2f;
+}
