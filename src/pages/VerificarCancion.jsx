@@ -5,16 +5,26 @@ export default function VerificarCancion() {
   const [showModal, setShowModal] = useState(false);
   const [resultado, setResultado] = useState(null);
 
+  const verificadas = [
+    "Luz Interna",
+    "Caminos",
+    "Estrella Roja",
+  ];
+
+  const noVerificadas = [
+    "Ritmo Urbano",
+    "Sueños Rotos",
+  ];
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Simulación simple: alterna entre "existe" o "autentica"
     const random = Math.random() > 0.5;
 
     if (random) {
       setResultado({
         tipo: "existe",
-        mensaje: "Esta canción ya existe y pertence a: Carlos Rivas",
+        mensaje: "Esta canción ya existe y pertenece a: Carlos Rivas",
       });
     } else {
       setResultado({
@@ -33,6 +43,28 @@ export default function VerificarCancion() {
         Comprueba si una canción ya está registrada en la blockchain.
       </p>
 
+      {/* LISTAS SUPERIORES */}
+      <div className="lists-grid">
+        <div className="list-box">
+          <h3 className="list-title success">✔ Verificadas</h3>
+          <ul>
+            {verificadas.map((c, i) => (
+              <li key={i}>{c}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="list-box">
+          <h3 className="list-title error">⚠ No verificadas</h3>
+          <ul>
+            {noVerificadas.map((c, i) => (
+              <li key={i}>{c}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* FORM ABAJO */}
       <form className="verify-form" onSubmit={handleSubmit}>
         <div className="dropzone">
           <p>Arrastra una canción aquí o selecciona un archivo</p>
@@ -42,7 +74,7 @@ export default function VerificarCancion() {
         <button className="verify-btn">Verificar</button>
       </form>
 
-      {/* MODAL DE RESULTADO */}
+      {/* MODAL */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-box" onClick={(e) => e.stopPropagation()}>

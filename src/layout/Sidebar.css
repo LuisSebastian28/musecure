@@ -1,71 +1,116 @@
+/* --- LAYOUT GENERAL --- */
 .layout-container {
     display: flex;
     height: 100vh;
-    background: #f4f4f4;
+    overflow: hidden;
+    background: #0d0f10;
 }
 
+/* --- SIDEBAR WEB3 --- */
 .sidebar {
     display: flex;
-    flex-direction: column;   /* Necesario para empujar el botón */
-    width: 220px;
-    background: #2d2f33;
-    color: white;
-    padding: 20px;
+    flex-direction: column;
+    width: 150px;
+    background: #111317;
+    color: #e5e7eb;
+    padding: 25px 20px;
+    border-right: 1px solid #1f2125;
 }
 
+/* --- PERFIL --- */
+.profile-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile-box:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #4f80ff;
+    box-shadow: 0 0 10px #4f80ff88;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.profile-info span {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* --- TITULO --- */
 .sidebar-title {
-    margin-bottom: 20px;
-    margin-left: 5px;
-    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 25px;
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
+/* --- NAV LINKS --- */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    gap: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
+    gap: 12px;
+    margin-top: 10px;
 }
 
 .sidebar-nav a {
-    color: #dcdcdc;
+    color: #d0d3d8;
     text-decoration: none;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.25s;
 }
 
 .sidebar-nav a:hover {
-    background: #3d3f44;
+    background: #314e75;
+    transform: translateX(4px);
 }
 
-.sidebar-content {
-    flex: 1;             /* ← Esto hace espacio flexible */
-    display: flex;
-    flex-direction: column;
-}
-
+/* --- CONTENIDO --- */
 .content {
     flex: 1;
-    padding: 30px;
+    padding: 25px 35px;
+    overflow-y: auto;
+    height: 100vh;
+    color: #e5e7eb;
 }
 
+/* --- LOGOUT --- */
 .logout-btn {
-    margin-top: auto;    
-    width: 100%;
-    padding: 10px;
-    margin-top: 30px;
+    margin-top: auto;
+    padding: 12px;
     background: #b93636;
-    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
+    color: white;
     cursor: pointer;
-    text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    transition: 0.25s;
 }
 
 .logout-btn:hover {
     background: #a02f2f;
+    transform: scale(1.03);
 }

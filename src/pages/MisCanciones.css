@@ -1,59 +1,60 @@
 .my-songs-container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .page-title {
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .page-subtitle {
-    color: #555;
-    margin-bottom: 30px;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 
-/* TABLA */
-.songs-table {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    overflow: hidden;
+/* GRID DE TARJETAS */
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.table-header,
-.table-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 15px;
-    font-size: 16px;
+/* TARJETA */
+.song-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.table-header {
-    background: #e6e6e6;
-    font-weight: bold;
+.song-title {
+  font-size: 20px;
+  color: #000;
+  margin: 0;
 }
 
-.table-row {
-    border-bottom: 1px solid #eee;
-}
-
-.table-row:last-child {
-    border-bottom: none;
+.song-artist {
+  color: #777;
+  font-size: 15px;
 }
 
 /* ESTADOS */
 .estado {
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    text-align: center;
-    color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  width: fit-content;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .verificada {
-    background: #2da34b;
+  background: #2da34b;
 }
 
 .pendiente {
-    background: #d68b1c;
+  background: #d68b1c;
 }

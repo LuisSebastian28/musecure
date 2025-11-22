@@ -8,7 +8,7 @@
 }
 
 .dashboard-subtitle {
-    color: #555;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
@@ -23,7 +23,7 @@
     background: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(62, 111, 255, 0.597);
     text-align: center;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .stat-card p {
-    color: #777;
+    color: #4f4949;
     margin-top: 8px;
 }
 
@@ -49,14 +49,15 @@
 
 .activity-list {
     background: white;
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .activity-list li {
+    color: #000000;
     padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000000;
 }
 
 .activity-list li:last-child {

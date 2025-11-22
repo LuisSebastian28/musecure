@@ -5,7 +5,6 @@ export default function Login() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    // Aquí podrías validar, pero por ahora solo redirige
     navigate("/dashboard");
   }
 
