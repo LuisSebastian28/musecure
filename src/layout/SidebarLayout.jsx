@@ -14,12 +14,12 @@ export default function SidebarLayout() {
 
         <div className="sidebar-content">
           <h2 className="sidebar-title">MuSecure</h2>
-          <hr />
 
           <nav className="sidebar-nav">
-            <Link to="/bienvenida">Bienvenida</Link>
-            <Link to="/bienvenida">Otra Página</Link>
-            <Link to="/bienvenida">Más opciones</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/subir">Subir Canción</Link>
+            <Link to="/canciones">Mis Canciones</Link>
+            <Link to="/verificar">Verificar Canción</Link>
           </nav>
         </div>
 

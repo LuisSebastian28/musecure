@@ -6,7 +6,7 @@ export default function Login() {
 
   function handleLogin() {
     // Aquí podrías validar, pero por ahora solo redirige
-    navigate("/bienvenida");
+    navigate("/dashboard");
   }
 
   return (

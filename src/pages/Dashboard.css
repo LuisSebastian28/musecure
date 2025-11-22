@@ -1,0 +1,64 @@
+.dashboard-container {
+    padding: 20px;
+}
+
+.dashboard-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* GRID DE ESTADÍSTICAS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-card h2 {
+    font-size: 40px;
+    margin: 0;
+    color: #333;
+}
+
+.stat-card p {
+    color: #777;
+    margin-top: 8px;
+}
+
+/* ACTIVIDAD */
+.activity-section {
+    margin-top: 40px;
+}
+
+.activity-section h2 {
+    margin-bottom: 15px;
+}
+
+.activity-list {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.activity-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
