@@ -4,27 +4,35 @@ import "./Sidebar.css";
 
 export default function SidebarLayout() {
   const navigate = useNavigate();
-  const { logout } = usePrivy();
+  const { logout, user } = usePrivy();
 
   async function handleLogout() {
-    await logout();   // <--- ESTE ES EL LOGOUT REAL DE PRIVY
+    await logout();
     navigate("/", { replace: true });
   }
+
+  // Obtener dirección de la wallet
+  const walletAddress = user?.wallet?.address;
+
+  // Reducir formato a 0xabc...1234
+  const shortAddress = walletAddress
+    ? walletAddress.slice(0, 6) + "..." + walletAddress.slice(-4)
+    : "Cargando...";
 
   return (
     <div className="layout-container">
 
       <aside className="sidebar">
 
-        <div className="profile-box" onClick={() => navigate("/perfil")}>
+        <div className="profile-box">
           <img
             src="https://i.pravatar.cc/150?img=12"
             alt="Perfil"
             className="profile-img"
           />
           <div className="profile-info">
-            <h3>Sebastián</h3>
-            <span>Artista</span>
+            <h3>{shortAddress}</h3>
+            <span>Wallet</span>
           </div>
         </div>
 

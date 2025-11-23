@@ -1,92 +1,92 @@
 import { useState } from "react";
+import { generateFingerprint } from "../utils/fingerprintAudio";
+import { findSongByFingerprint } from "../utils/storage";
 import "./VerificarCancion.css";
 
 export default function VerificarCancion() {
+  const [archivo, setArchivo] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [resultado, setResultado] = useState(null);
+  const [procesando, setProcesando] = useState(false);
 
-  const verificadas = [
-    "Luz Interna",
-    "Caminos",
-    "Estrella Roja",
-  ];
-
-  const noVerificadas = [
-    "Ritmo Urbano",
-    "Sueños Rotos",
-  ];
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    const random = Math.random() > 0.5;
+    if (!archivo) return alert("Sube un archivo.");
 
-    if (random) {
-      setResultado({
-        tipo: "existe",
-        mensaje: "Esta canción ya existe y pertenece a: Carlos Rivas",
-      });
-    } else {
-      setResultado({
-        tipo: "autentica",
-        mensaje: "¡Canción auténtica! No existe en blockchain.",
-      });
+    setProcesando(true);
+    
+    try {
+      const fingerprint = await generateFingerprint(archivo);
+
+      // Convertir fingerprint a formato legible para mostrar
+      const fingerprintDisplay = fingerprint
+        .slice(0, 10) // Mostrar solo los primeros 10 hashes
+        .map(item => item.hash)
+        .join('\n');
+
+      const match = findSongByFingerprint(fingerprint);
+
+      if (match) {
+        setResultado({
+          tipo: "existe",
+          mensaje: `Ya está registrada y pertenece a: ${match.artista}`,
+          fingerprint: fingerprintDisplay,
+          totalHashes: fingerprint.length
+        });
+      } else {
+        setResultado({
+          tipo: "autentica",
+          mensaje: "No existe ninguna coincidencia en la base de datos.",
+          fingerprint: fingerprintDisplay,
+          totalHashes: fingerprint.length
+        });
+      }
+
+      setShowModal(true);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al procesar el archivo');
+    } finally {
+      setProcesando(false);
     }
-
-    setShowModal(true);
   }
 
   return (
     <div className="verify-container">
       <h1 className="verify-title">Verificar Canción</h1>
-      <p className="verify-subtitle">
-        Comprueba si una canción ya está registrada en la blockchain.
-      </p>
 
-      {/* LISTAS SUPERIORES */}
-      <div className="lists-grid">
-        <div className="list-box">
-          <h3 className="list-title success">✔ Verificadas</h3>
-          <ul>
-            {verificadas.map((c, i) => (
-              <li key={i}>{c}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="list-box">
-          <h3 className="list-title error">⚠ No verificadas</h3>
-          <ul>
-            {noVerificadas.map((c, i) => (
-              <li key={i}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* FORM ABAJO */}
       <form className="verify-form" onSubmit={handleSubmit}>
         <div className="dropzone">
-          <p>Arrastra una canción aquí o selecciona un archivo</p>
-          <input type="file" accept=".mp3,.wav" required />
+          <input
+            type="file"
+            accept=".mp3,.wav"
+            required
+            onChange={(e) => setArchivo(e.target.files[0])}
+            disabled={procesando}
+          />
         </div>
 
-        <button className="verify-btn">Verificar</button>
+        <button className="verify-btn" disabled={procesando}>
+          {procesando ? "Procesando..." : "Verificar"}
+        </button>
       </form>
 
-      {/* MODAL */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-            {resultado?.tipo === "autentica" && (
-              <h2 className="success-title">✔ Canción Auténtica</h2>
-            )}
+            <h2>
+              {resultado?.tipo === "autentica"
+                ? "✔ Canción Auténtica"
+                : "⚠ Ya Registrada"}
+            </h2>
 
-            {resultado?.tipo === "existe" && (
-              <h2 className="error-title">⚠ Ya Registrada</h2>
-            )}
+            <p>{resultado?.mensaje}</p>
 
-            <p className="modal-message">{resultado?.mensaje}</p>
+            <div className="fingerprint-box">
+              <strong>Fingerprint (primeros 10 hashes de {resultado?.totalHashes}):</strong>
+              <pre>{resultado?.fingerprint}</pre>
+            </div>
 
             <button className="close-btn" onClick={() => setShowModal(false)}>
               Cerrar

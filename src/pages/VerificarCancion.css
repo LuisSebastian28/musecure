@@ -187,3 +187,17 @@
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.fingerprint-box {
+  margin-top: 15px;
+  background: #000000;
+  padding: 12px;
+  border-radius: 8px;
+  max-height: 200px;     
+  overflow-y: auto;        
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  border: 1px solid #ddd;
+}
+
