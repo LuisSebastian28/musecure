@@ -1,11 +1,14 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import { usePrivy } from "@privy-io/react-auth";
 import "./Sidebar.css";
 
 export default function SidebarLayout() {
   const navigate = useNavigate();
+  const { logout } = usePrivy();
 
-  function handleLogout() {
-    navigate("/");
+  async function handleLogout() {
+    await logout();   // <--- ESTE ES EL LOGOUT REAL DE PRIVY
+    navigate("/", { replace: true });
   }
 
   return (

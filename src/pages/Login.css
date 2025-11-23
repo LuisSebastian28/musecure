@@ -116,3 +116,12 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgba(79, 128, 255, 0.35);
 }
+
+.web3-info {
+  color: #d6d6df;
+  font-size: 14px;
+  margin-top: 4px;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+}
+

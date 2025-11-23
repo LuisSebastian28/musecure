@@ -1,30 +1,32 @@
-import "./Login.css";
+import { usePrivy } from "@privy-io/react-auth";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import "./Login.css";
 
 export default function Login() {
+  const { login, authenticated } = usePrivy();
   const navigate = useNavigate();
 
-  function handleLogin() {
-    navigate("/dashboard");
-  }
+  useEffect(() => {
+    if (authenticated) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [authenticated, navigate]);
 
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Iniciar Sesión</h2>
+        <h2>Bienvenido</h2>
 
         <div className="input-group">
-          <label>Correo</label>
-          <input type="email" placeholder="ejemplo@gmail.com" />
+          <label>Acceso seguro Web3</label>
+          <p className="web3-info">
+            Con Privy iniciarás sesión y tendrás una wallet automática lista para usar.
+          </p>
         </div>
 
-        <div className="input-group">
-          <label>Contraseña</label>
-          <input type="password" placeholder="••••••••" />
-        </div>
-
-        <button className="login-btn" onClick={handleLogin}>
-          Entrar
+        <button className="login-btn" onClick={login}>
+          Ingresar con Privy
         </button>
       </div>
     </div>
